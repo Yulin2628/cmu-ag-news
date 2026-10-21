@@ -13,18 +13,15 @@ All four systems use the same fresh 400-item test set. Retrieval changes four-sh
 
 ## Run
 
-Python 3.12 was used. Install a CUDA-enabled PyTorch build suitable for your machine, then the remaining dependencies:
+Python 3.12 was used. Install a CUDA-enabled PyTorch build suitable for your machine, then run a fresh experiment in a separate directory:
 
 ```bash
 python -m pip install -r requirements.txt
-python experiment.py prepare
-python experiment.py develop
-python experiment.py test
-python experiment.py analyze
-python make_report.py
+python experiment.py all --results-dir reproduction
+python make_report.py --results-dir reproduction
 ```
 
-To rebuild the PDF, install `requirements-report.txt` and run `python render_report.py`. The renderer uses Arial on Windows or DejaVu Sans on Linux.
+The new report is written to `reproduction/report.md`. To rebuild the published PDF from the included report, install `requirements-report.txt` and run `python render_report.py`. The renderer uses Arial on Windows or DejaVu Sans on Linux.
 
 The full run uses 2,000 training, 400 validation and 400 fresh test examples. `PROTOCOL.json` records the search space and split rules. Base-model revisions are pinned in `experiment.py`; models and AG News are downloaded on first use. Set `CMU_MODEL_CACHE` to reuse model weights, or `HF_HOME` to change the dataset cache. Use `--offline` once all files are cached. Training is intended for a CUDA GPU, with BF16 on supported hardware.
 
