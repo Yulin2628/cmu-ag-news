@@ -1,0 +1,9 @@
+# Keep the already installed CUDA-enabled torch. Install it separately if absent.
+torch>=2.4,<3
+transformers==4.46.3
+peft==0.14.0
+datasets==3.2.0
+accelerate>=1,<2
+scikit-learn>=1.5,<2
+matplotlib>=3.9,<4
+scipy>=1.13

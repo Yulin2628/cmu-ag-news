@@ -1,0 +1,12 @@
+.venv/
+.idea/
+__pycache__/
+*.py[cod]
+model_cache/
+.plot_cache/
+quick_results/
+smoke_results_verified/
+.env
+results/adapters/
+results/**/checkpoints/
+*.zip

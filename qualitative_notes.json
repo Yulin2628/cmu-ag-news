@@ -1,0 +1,26 @@
+[
+  {
+    "id": "test-8",
+    "sha256": "d70ad22857c4362f49ad8cc97b21247d0281c27516cc0ceec00410751c6b7e4c",
+    "title": "Athens and the Olympic Games",
+    "analysis": "The city name and broad headline allow an international-news reading, but the reference to the Games of the XXVIII Olympiad identifies the sporting event. Qwen ICL returns the valid but wrong label World; Qwen LoRA returns Sports. This is a change in topic classification rather than a correction of output format. SmolLM2 returns World both before and after fine-tuning on this same item, so the correction is not shared by both model families."
+  },
+  {
+    "id": "test-14",
+    "sha256": "59699836f28647c6b2c06a0a3fe01c59f8d8f5efe1abb09cca9dff9c2b183ae5",
+    "title": "Debt relief across topic boundaries",
+    "analysis": "The gold label is World. The story also concerns debt and creditor nations, so Business is a plausible competing topic. Qwen changes from Business with ICL to World with LoRA. The example exposes the overlap between international affairs and finance in a single-label dataset; it does not show that one system invented facts."
+  },
+  {
+    "id": "test-20",
+    "sha256": "edb4cc1eb427f26d38abf893427024018024cae6bde64cb2f3f58e06ce51625c",
+    "title": "A recognisable topic with the wrong label string",
+    "analysis": "Qwen ICL generates Science/Tech for a story about dinosaur growth. That is recognisably a science label, but it fails the predefined exact-label rule. Qwen LoRA generates the required Sci/Tech string. This example is a label-naming failure under the evaluation protocol, rather than evidence that the ICL model missed the scientific topic. On the same item, SmolLM2 ICL returns World and its LoRA model returns Sci/Tech. The four outputs therefore distinguish a label-format error from a wrong valid topic."
+  },
+  {
+    "id": "test-72",
+    "sha256": "74023a2ff36412e440808dd4b4b436ea58a92926e93417f6218ed9747df2f184",
+    "title": "A regression on a software-service story",
+    "analysis": "The gold label is Business. Qwen ICL matches it, whereas Qwen LoRA returns Sci/Tech and therefore regresses under strict accuracy. The text describes a computerised calling service, making the technology interpretation understandable. This is a boundary case, and it illustrates why a higher overall fine-tuning score does not mean every prediction improves. Both LoRA models return Sci/Tech here and share this strict-label error."
+  }
+]

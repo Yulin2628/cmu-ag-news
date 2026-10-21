@@ -1,0 +1,53 @@
+{
+  "seed": 42,
+  "train_examples": 2000,
+  "validation_examples": 400,
+  "test_examples": 400,
+  "fresh_test_seed": 43,
+  "fresh_test_rule": "Exclude the 400 official-test examples sampled with seed 42 in the earlier pilot, then stratify-sample 400 with seed 43.",
+  "models": [
+    "Qwen/Qwen2.5-0.5B-Instruct",
+    "HuggingFaceTB/SmolLM2-360M-Instruct"
+  ],
+  "prompt_candidates": [
+    [
+      "short",
+      1
+    ],
+    [
+      "short",
+      4
+    ],
+    [
+      "definitions",
+      4
+    ],
+    [
+      "explicit",
+      4
+    ],
+    [
+      "chat",
+      4
+    ]
+  ],
+  "baseline": [
+    "short",
+    0
+  ],
+  "lora_learning_rates": [
+    0.0001,
+    0.0002
+  ],
+  "lora_epochs": 1,
+  "selection_metric": "validation strict generated-label accuracy",
+  "tie_break": "first configuration in the declared order",
+  "additional_experiment": "fixed four-shot versus train-only TF-IDF retrieved four-shot, with model and prompt style held constant",
+  "prior_work": "The 128-training-example pilot and its test results are exploratory and excluded from the final result table. Four unchanged full-size Qwen prompt-validation trials from the prior development attempt are reused because their data, model revision, prompts and scoring are unchanged. Two earlier short-style retrieval validation trials are retained as preliminary records. Final full-data training and fresh-test results are newly run.",
+  "development_update": "After the initial SmolLM2 one-shot validation accuracy was 3.25%, explicit-final-instruction and alternating-chat-turn four-shot formats were added for both models. This adaptive change used validation results only; the fresh test was still sealed.",
+  "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4",
+  "model_revisions": {
+    "qwen": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "smol": "a10cc1512eabd3dde888204e902eca88bddb4951"
+  }
+}
