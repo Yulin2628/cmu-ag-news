@@ -1,0 +1,32 @@
+{
+  "train": {
+    "n": 2000,
+    "labels": [
+      500,
+      500,
+      500,
+      500
+    ],
+    "sha256": "d1daccd78a18225eadf6b42bbc2c9f5bb0cabb9a59653e99be4ccf819d19cfd9"
+  },
+  "dev": {
+    "n": 400,
+    "labels": [
+      100,
+      100,
+      100,
+      100
+    ],
+    "sha256": "c89f4d5cb6337b934a00cdfa1b142375bafa335dc8e8efe06b665f5509ba266e"
+  },
+  "test": {
+    "n": 400,
+    "labels": [
+      100,
+      100,
+      100,
+      100
+    ],
+    "sha256": "1996f0efd957f670a1593008a3c6d07934a09c5f116a0d211c596ec9e733e0ef"
+  }
+}
