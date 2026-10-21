@@ -4,6 +4,13 @@ CMU 11-667 mini-project comparing Qwen2.5-0.5B-Instruct and SmolLM2-360M-Instruc
 
 Prompt development compares demonstration count, category definitions, an explicit final output instruction and alternating chat-turn demonstrations. The latter formats were added after validation exposed failures in the original completion-style prompt.
 
+| Model | ICL accuracy | LoRA accuracy |
+| --- | ---: | ---: |
+| Qwen2.5-0.5B | 57.25% | 88.00% |
+| SmolLM2-360M | 24.25% | 83.50% |
+
+All four systems use the same fresh 400-item test set. Retrieval changes four-shot accuracy to 47.50% for Qwen and 28.25% for SmolLM2. See the [report](report.pdf) for class-level errors and limitations, or the [slides](presentation.pptx) for the main findings.
+
 ## Run
 
 Python 3.12 was used. Install a CUDA-enabled PyTorch build suitable for your machine, then the remaining dependencies:
