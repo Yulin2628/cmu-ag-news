@@ -1,0 +1,66 @@
+{
+  "qwen": {
+    "icl": {
+      "model": "qwen",
+      "method": "icl",
+      "style": "short",
+      "shots": 4,
+      "seed": 42
+    },
+    "lora": {
+      "model": "qwen",
+      "method": "lora",
+      "shots": 0,
+      "style": "short",
+      "lr": 0.0002,
+      "adapter": "results/adapters/qwen_0.0002"
+    },
+    "extra_fixed": {
+      "model": "qwen",
+      "method": "icl",
+      "style": "short",
+      "shots": 4,
+      "seed": 42
+    },
+    "extra_retrieval": {
+      "model": "qwen",
+      "method": "icl",
+      "style": "short",
+      "shots": 4,
+      "seed": 42,
+      "retrieval": true
+    }
+  },
+  "smol": {
+    "icl": {
+      "model": "smol",
+      "method": "icl",
+      "style": "explicit",
+      "shots": 4,
+      "seed": 42
+    },
+    "lora": {
+      "model": "smol",
+      "method": "lora",
+      "shots": 0,
+      "style": "short",
+      "lr": 0.0002,
+      "adapter": "results/adapters/smol_0.0002"
+    },
+    "extra_fixed": {
+      "model": "smol",
+      "method": "icl",
+      "style": "explicit",
+      "shots": 4,
+      "seed": 42
+    },
+    "extra_retrieval": {
+      "model": "smol",
+      "method": "icl",
+      "style": "explicit",
+      "shots": 4,
+      "seed": 42,
+      "retrieval": true
+    }
+  }
+}
