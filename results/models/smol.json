@@ -1,0 +1,8 @@
+{
+  "model_id": "HuggingFaceTB/SmolLM2-360M-Instruct",
+  "revision": "a10cc1512eabd3dde888204e902eca88bddb4951",
+  "layers": 32,
+  "hidden_size": 960,
+  "vocab_size": 49152,
+  "base_parameters": 361821120
+}
